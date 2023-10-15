@@ -1,0 +1,16 @@
+{
+  "name": "jdbc-sink-mongo-products",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "topics": "inventory.products",
+    "connection.uri": "mongodb://debezium:debezium@mongo:27017/inventory",
+    "database": "inventory",
+    "collection": "products",
+    "insert.mode": "upsert",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "false",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false"
+  }
+}
